@@ -19,7 +19,7 @@ class _TodoScreenState extends State<TodoScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(onPressed: (){
         Navigator.pushNamed(context, Routes.ADD_TASK);
-      },child: const Icon(Icons.add,color: AppColors.whiteColor,),),
+      },backgroundColor: AppColors.primarySwatchColor.shade800,child: const Icon(Icons.add,color: AppColors.whiteColor,),),
       body:Consumer<TaskController>(builder: (context, value, widget) {
         return ListView.builder(
           itemBuilder: (context, index) {

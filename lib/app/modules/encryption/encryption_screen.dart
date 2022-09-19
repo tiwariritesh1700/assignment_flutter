@@ -64,6 +64,8 @@ class _EncryptionScreenState extends State<EncryptionScreen> {
           Expanded(child: AppButton(buttonText: 'Encrypt',onPressed: (){
             if (_encryptionController!.formKey.currentState!
                 .validate()) {
+              FocusManager.instance.primaryFocus?.unfocus();
+
               _encryptionController?.encryptMyData();
             }
           },),),
@@ -75,6 +77,8 @@ class _EncryptionScreenState extends State<EncryptionScreen> {
            Expanded(child: AppButton(buttonText: 'Decrypt',onPressed: (){
             if (_encryptionController!.formKey.currentState!
                 .validate()) {
+              FocusManager.instance.primaryFocus?.unfocus();
+
               _encryptionController?.decryptMyData();
             }
           },))

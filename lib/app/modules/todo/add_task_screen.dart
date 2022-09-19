@@ -59,6 +59,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
           children: [
              Expanded(child:  AppButton(buttonText: 'Save',onPressed: (){
               if(_taskController!.formKey.currentState!.validate()){
+                FocusManager.instance.primaryFocus?.unfocus();
+
                 _taskController?.addTask(TaskModel(task:_taskController!.taskEditingController.value.text , dateAndTime: _taskController!.dateAndTimeController.value.text));
                 Navigator.pop(context);
               }
@@ -68,6 +70,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             ),
 
             Expanded(child:  AppButton(buttonText: 'Clear',onPressed: (){
+              FocusManager.instance.primaryFocus?.unfocus();
+
               _taskController?.taskEditingController.clear();
               _taskController?.dateAndTimeController.clear();
             },)),
