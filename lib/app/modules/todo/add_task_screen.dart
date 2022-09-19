@@ -62,7 +62,9 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
                 FocusManager.instance.primaryFocus?.unfocus();
 
                 _taskController?.addTask(TaskModel(task:_taskController!.taskEditingController.value.text , dateAndTime: _taskController!.dateAndTimeController.value.text));
+                _taskController?.clear();
                 Navigator.pop(context);
+
               }
             },)),
             const SizedBox(
@@ -72,8 +74,8 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
             Expanded(child:  AppButton(buttonText: 'Clear',onPressed: (){
               FocusManager.instance.primaryFocus?.unfocus();
 
-              _taskController?.taskEditingController.clear();
-              _taskController?.dateAndTimeController.clear();
+              _taskController?.clear();
+
             },)),
 
           ],

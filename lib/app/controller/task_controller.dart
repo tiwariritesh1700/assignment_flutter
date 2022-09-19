@@ -45,4 +45,9 @@ class TaskController extends ChangeNotifier {
     localStorage.deleteTask(item);
     notifyListeners();
   }
+
+  void clear(){
+    taskEditingController.clear();
+    dateAndTimeController.clear();
+  }
 }
