@@ -115,7 +115,7 @@ class _EncryptionScreenState extends State<EncryptionScreen> {
                 if (value == null || value.isEmpty) {
                   return 'Field Cannot be empty';
                 }
-                if (value.isNotEmpty && value.length == 15) {
+                if (value.isNotEmpty && value.length < 16) {
                   return 'secret key minimum length should be 16  ';
                 }
 
